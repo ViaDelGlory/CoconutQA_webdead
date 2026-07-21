@@ -47,3 +47,31 @@ class DataGenerator:
     @staticmethod
     def generate_random_name():
         return faker.name()
+
+    @staticmethod
+    def generate_fake_price():
+        return faker.random_int(100, 1000)
+
+    @staticmethod
+    def generate_description():
+        return faker.text(100)
+
+    @staticmethod
+    def generate_name_movie():
+        return faker.sentence(nb_words=3)
+
+    @staticmethod
+    def generate_url():
+        return faker.image_url()
+
+    @staticmethod
+    def generate_locations():
+        return faker.random_element(["MSK", "SPB"])
+
+    @staticmethod
+    def generate_id():
+        return faker.random_int(4,10)
+
+    @staticmethod
+    def generate_boolean():
+        return faker.boolean()

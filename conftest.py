@@ -1,10 +1,13 @@
 import pytest
 import requests
 from clients.auth_api import AuthApi
+from clients.movie_manager import MoviesManager
 from custom_requester.custom_requester import CustomRequester
 from config.base_urls import AUTH_BASE_URL
 from data.auth.register_data import get_register_payload
 from clients.api_manager import ApiManager
+from data.movies.movies_data import get_movie_data
+
 
 @pytest.fixture(scope="session")
 def session():
@@ -58,3 +61,11 @@ def custom_requester(session):
 def authenticated_admin(api_manager,login_admin):
     response = api_manager.auth_api.authenticate(login_admin)
     return response
+
+@pytest.fixture(scope="session")
+def movie_manager(session):
+    return MoviesManager(session)
+
+@pytest.fixture(scope="session")
+def test_movie():
+    return get_movie_data()
