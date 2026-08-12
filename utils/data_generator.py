@@ -42,7 +42,34 @@ class DataGenerator:
 
     @staticmethod
     def generate_password():
-        return faker.password()
+        """
+        Генерирует пароль, соответствующий требованиям:
+        - Длина от 8 до 20 символов
+        - Минимум 1 буква (латиница или кириллица)
+        - Минимум 1 цифра
+        - Разрешенные спецсимволы: ?@#$%^&*_-+()[]{}><\\/|"'.,:;
+        """
+        # Определяем наборы символов
+        letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        digits = '0123456789'
+        special = '?@#$%^&*_-+()[]{}><\\/|"\'.,:;'
+
+        # Гарантируем наличие хотя бы одной буквы, цифры и спецсимвола
+        password_chars = [
+            random.choice(letters),  # минимум 1 буква
+            random.choice(digits),  # минимум 1 цифра
+            random.choice(special),  # минимум 1 спецсимвол
+        ]
+
+        # Добавляем случайные символы до нужной длины (от 8 до 20)
+        all_chars = letters + digits + special
+        remaining_length = random.randint(5, 17)  # 8-20 минус 3 обязательных
+        password_chars.extend(random.choices(all_chars, k=remaining_length))
+
+        # Перемешиваем для случайного порядка
+        random.shuffle(password_chars)
+
+        return ''.join(password_chars)
 
     @staticmethod
     def generate_random_name():
@@ -70,7 +97,7 @@ class DataGenerator:
 
     @staticmethod
     def generate_id():
-        return faker.random_int(4,10)
+        return faker.random_int(5,10)
 
     @staticmethod
     def generate_boolean():

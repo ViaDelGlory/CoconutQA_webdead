@@ -115,13 +115,11 @@ def test_edit_movie(movie_manager, authenticated_admin, test_movie):
     assert edit_response["price"] == movie_data["price"]
 
 
-def test_edit_movie_negative_price(movie_manager, test_movie, authenticated_admin):
+def test_edit_movie_negative_price(movie_manager, test_movie, super_admin):
     """Проверяем изменение фильма на негативную цену"""
-    #Логинимся под админом
-    authenticated_admin
 
     #Создаем тест фильм и забираем id
-    create_response = movie_manager.movies_api.create_movie(test_movie).json()
+    create_response = super_admin.api.movies_api.create_movie(test_movie).json()
     movie_id = create_response["id"]
 
     #Подготовим данные для изменения
@@ -130,7 +128,7 @@ def test_edit_movie_negative_price(movie_manager, test_movie, authenticated_admi
     }
 
     #Отправляем запрос на изменение
-    edit_response = movie_manager.movies_api.edit_movie_by_id(movie_id,movie_data, expected_status=400).json()
+    edit_response = super_admin.api.movies_api.edit_movie_by_id(movie_id,movie_data, expected_status=400).json()
     assert edit_response["error"] == "Bad Request"
     assert edit_response["statusCode"] == 400
     assert edit_response["message"][0] == "price must not be less than 1"
@@ -172,3 +170,67 @@ def test_edit_movie_rounding_movie(movie_manager,test_movie,authenticated_admin)
     edit_response = movie_manager.movies_api.edit_movie_by_id(movie_id,movie_data, expected_status=200).json()
     assert edit_response["price"] == 125, \
     f"Ожидали получить 125 - получили {edit_response['price']}"
+
+def test_get_common_user(common_user, test_movie):
+    common_user.api.movies_api.create_movie(test_movie, expected_status=403)
+
+def test_get_admin_user(admin_user, test_movie):
+    admin_user.api.movies_api.create_movie(test_movie)
+
+@pytest.mark.parametrize(
+    "params",
+    [
+        {"minPrice": 1, "maxPrice": 1000},
+        {"locations": ["MSK"]},
+        {"genreId": 7},
+    ],
+    ids=[
+        "price_filter",
+        "location_filter",
+        "genre_filter"
+    ],
+)
+def test_movie_with_parametrize(common_user, params):
+    """Проверяем получение фильма по разным параметрам"""
+    #Отправляем запрос на получение фильма
+    response = common_user.api.movies_api.get_movies(params=params)
+
+    #Записываем ответ в переменную
+    movies = response.json()["movies"]
+
+    for movie in movies:
+        if "minPrice" in params:
+            assert movie["price"] >= params["minPrice"]
+
+        if "maxPrice" in params:
+            assert movie["price"] <= params["maxPrice"]
+
+        if "locations" in params:
+            assert movie["location"] in params["locations"]
+
+        if "genreId" in params:
+            assert movie["genreId"] == params["genreId"]
+
+
+@pytest.mark.parametrize(
+    "user, expected_status",
+    [
+        ("common_user", 403),
+        ("admin_user", 403),
+        ("super_admin", 200)
+    ],
+    ids=["CommonUser", "AdminUser", "SuperAdmin"],
+    indirect = ["user"],
+)
+def test_delete_movie_by_id_diff_user(user, test_movie, super_admin, expected_status):
+    """Проверяем удаление фильмов под разными пользователями"""
+    #Создадим тестовый фильм и заберем id
+    movie_data = super_admin.api.movies_api.create_movie(test_movie).json()
+    movie_id = movie_data["id"]
+
+    #Теперь удаляем фильм по id
+    delete_response = user.api.movies_api.delete_movie_by_id(movie_id, expected_status=expected_status).json()
+
+    if expected_status == 200:
+        user.api.movies_api.get_movie_by_id(movie_id, expected_status=404)
+        assert delete_response["id"] == movie_id

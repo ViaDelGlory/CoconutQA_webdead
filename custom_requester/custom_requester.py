@@ -1,7 +1,7 @@
 import json
 import logging
 import os
-
+from pydantic import BaseModel
 
 class CustomRequester:
     base_headers = {
@@ -17,6 +17,10 @@ class CustomRequester:
         self.logger = logging.getLogger(__name__)
 
     def send_request(self, method, endpoint, data=None, params=None, expected_status=201, need_logging=True, **kwargs):
+
+        if isinstance(data, BaseModel):
+            data = json.loads(data.model_dump_json(exclude_unset=True))
+
         url = f"{self.base_url}{endpoint}"
         response = self.session.request(method, url, json=data, params=params, **kwargs)
 
