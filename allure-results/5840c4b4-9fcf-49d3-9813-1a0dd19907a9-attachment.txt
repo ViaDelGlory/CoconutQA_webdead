@@ -1,0 +1,38 @@
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_get_movies[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?page=1&genreId=10&pageSize=1&minPrice=1&maxPrice=9999&published=True' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "movies": [
+        {
+            "id": 266,
+            "name": "Тестовый фильм",
+            "description": "Тестовое описание",
+            "genreId": 10,
+            "imageUrl": "https://image.url",
+            "price": 1240,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-05-09T14:57:12.871Z",
+            "genre": {
+                "name": "Военный"
+            }
+        }
+    ],
+    "count": 336,
+    "page": 1,
+    "pageSize": 1,
+    "pageCount": 336
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================

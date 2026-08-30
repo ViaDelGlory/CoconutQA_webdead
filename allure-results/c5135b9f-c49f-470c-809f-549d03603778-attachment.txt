@@ -1,0 +1,268 @@
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_movie_with_parametrize[genre_filter] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTA5LCJleHAiOjE3ODgwOTEzMDl9.RlgkhaDgEcpQmLdjFNjSuhHyP48t0W3Wx8lcgyl6IbI",
+    "refreshToken": "2351a2aa-c24a-47d0-bc5e-34964a3323bc",
+    "expiresIn": 1788091309735
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_movie_with_parametrize[genre_filter] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/user' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTA5LCJleHAiOjE3ODgwOTEzMDl9.RlgkhaDgEcpQmLdjFNjSuhHyP48t0W3Wx8lcgyl6IbI' \
+-H 'Cookie: refresh_token=2351a2aa-c24a-47d0-bc5e-34964a3323bc' \
+-H 'Content-Length: 181' \
+-d '{"email": "kekhxk7tfux@gmail.com", "fullName": "Dana Franco", "password": "d->]{Ptg'k8Kc]", "passwordRepeat": "d->]{Ptg'k8Kc]", "roles": ["USER"], "verified": true, "banned": false}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m201[0m
+	DATA:
+{
+    "id": "cb3fe728-7e1b-4478-8a76-6097daf17c42",
+    "email": "kekhxk7tfux@gmail.com",
+    "fullName": "Dana Franco",
+    "verified": true,
+    "banned": false,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-08-30T11:31:50.032Z"
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_movie_with_parametrize[genre_filter] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 64' \
+-d '{"email": "kekhxk7tfux@gmail.com", "password": "d->]{Ptg'k8Kc]"}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "cb3fe728-7e1b-4478-8a76-6097daf17c42",
+        "email": "kekhxk7tfux@gmail.com",
+        "fullName": "Dana Franco",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNiM2ZlNzI4LTdlMWItNDQ3OC04YTc2LTYwOTdkYWYxN2M0MiIsImVtYWlsIjoia2VraHhrN3RmdXhAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTEwLCJleHAiOjE3ODgwOTEzMTB9.EIb_ZPoflco7bnA6QTWyY9XSFsxSOPjnIIV1SqRVpnE",
+    "refreshToken": "519281c0-f247-43a3-8e6a-5d651df61f80",
+    "expiresIn": 1788091310735
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_movie_with_parametrize[genre_filter][0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?genreId=7' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNiM2ZlNzI4LTdlMWItNDQ3OC04YTc2LTYwOTdkYWYxN2M0MiIsImVtYWlsIjoia2VraHhrN3RmdXhAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTEwLCJleHAiOjE3ODgwOTEzMTB9.EIb_ZPoflco7bnA6QTWyY9XSFsxSOPjnIIV1SqRVpnE' \
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "movies": [
+        {
+            "id": 836,
+            "name": "Виртуальная и многозадачная возможность",
+            "description": "Означать тюрьма тута магазин адвокат. Задержать песенка порядок чувство легко бок.",
+            "genreId": 7,
+            "imageUrl": "https://www.oao.biz/",
+            "price": 468,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-22T15:40:55.013Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 995,
+            "name": "Фильм jkzqaqqvmm",
+            "description": "Описание mqdsqccdhbiatwmafisziyhgwxkozl",
+            "genreId": 7,
+            "imageUrl": "https://www.walker.org/tagmain.htm",
+            "price": 445,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-23T20:31:06.323Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 997,
+            "name": "Фильм xinaamufkf",
+            "description": "Описание vycdjiyusamgozhqpgdlczngtwpoby",
+            "genreId": 7,
+            "imageUrl": "https://munoz-williams.info/postsabout.jsp",
+            "price": 685,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-23T20:33:39.566Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1095,
+            "name": "Theory apply.",
+            "description": "Charge news mention eat computer show. Government imagine lose interest attack loss. Product painting accept best sister continue.\nBlood operation look seek growth. President fill you north do.",
+            "genreId": 7,
+            "imageUrl": "https://placekitten.com/808/445",
+            "price": 170,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-26T11:22:29.489Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1276,
+            "name": "SeaShell opinion",
+            "description": "Film SeaShell opinion description",
+            "genreId": 7,
+            "imageUrl": "https://image.url",
+            "price": 787,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-27T11:21:09.218Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1308,
+            "name": "The last Geochemist",
+            "description": "Film The last Geochemist description",
+            "genreId": 7,
+            "imageUrl": null,
+            "price": 478,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-27T17:18:16.876Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1699,
+            "name": "Know.",
+            "description": "Actually pay machine sister result. Away bad begin opportunity. Media then build gun situation a finish.\nWant conference section yeah state. Agent road accept street.",
+            "genreId": 7,
+            "imageUrl": "https://placekitten.com/981/114",
+            "price": 892,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-28T20:53:36.521Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1957,
+            "name": "Some consider fight.",
+            "description": "Country traditional hundred world statement ago range.\nEach lot civil car city.",
+            "genreId": 7,
+            "imageUrl": "https://dummyimage.com/482x61",
+            "price": 749,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-29T15:57:37.739Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1999,
+            "name": "Share.",
+            "description": "Among among certain church step spend identify treatment. Family option generation study suddenly. Than Republican dinner put action.",
+            "genreId": 7,
+            "imageUrl": "https://placekitten.com/458/412",
+            "price": 761,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-30T11:03:38.938Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 2063,
+            "name": "Hold or.",
+            "description": "Entire its green between commercial close. Ahead policy religious major include concern. Southern past from standard expect special need total.",
+            "genreId": 7,
+            "imageUrl": "https://dummyimage.com/560x767",
+            "price": 352,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-06-21T23:07:44.983Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        }
+    ],
+    "count": 396,
+    "page": 1,
+    "pageSize": 10,
+    "pageCount": 40
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================

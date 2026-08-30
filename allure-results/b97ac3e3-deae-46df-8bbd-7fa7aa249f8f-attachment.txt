@@ -1,0 +1,22 @@
+======================================== REQUEST ========================================
+[32mpytest tests/api/test_auth.py::TestAuth::test_login_and_update_uncorrected[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzZWY0NWYxLThiYWItNDIzZC05MGRhLTgwZDRkNDdiNDIyOCIsImVtYWlsIjoia2VraXdwbGprNHhAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg4Nzc4LCJleHAiOjE3ODgwOTA1Nzh9.s7wYaHWNgbInsbtRsvSEcD0AOFeKaKwsqVqmUfNVCFg' \
+-H 'Cookie: refresh_token=6e4be633-8aa6-436e-803c-9ce096e15136' \
+-H 'Content-Length: 57' \
+-d '{"email": "Fasd23@email.com", "password": "Zxcasdqw313-"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [31m401[0m
+	DATA: [31m{
+    "message": "Неверный логин или пароль",
+    "error": "Unauthorized",
+    "statusCode": 401
+}[0m
+================================================================================

@@ -1,0 +1,101 @@
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_edit_movie_rounding_movie (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NDk4LCJleHAiOjE3ODgwOTEyOTh9.6pY5Sd46g5FKDYj6u2kotvpfO0ToLu3SH5_-fNtKmcU' \
+-H 'Cookie: refresh_token=07e86a1e-d31e-4e76-983e-557c4a7d05cd' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NDk5LCJleHAiOjE3ODgwOTEyOTl9.4mU2p5je5c2nyM_vNzSe1gNbxKjJ-kQ9R4aWIzD2Cc8",
+    "refreshToken": "3d86cda3-c654-4246-b7f0-1c9ef9f38958",
+    "expiresIn": 1788091299358
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_edit_movie_rounding_movie[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NDk5LCJleHAiOjE3ODgwOTEyOTl9.4mU2p5je5c2nyM_vNzSe1gNbxKjJ-kQ9R4aWIzD2Cc8' \
+-H 'Content-Length: 263' \
+-d '{"name": "Similar investment would movement.", "imageUrl": "https://dummyimage.com/894x584", "price": 942, "description": "Common necessary research. Learn bit guy face. Tv art maybe other news particularly.", "location": "SPB", "published": false, "genreId": 10}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m201[0m
+	DATA:
+{
+    "id": 72833,
+    "name": "Similar investment would movement.",
+    "price": 942,
+    "description": "Common necessary research. Learn bit guy face. Tv art maybe other news particularly.",
+    "imageUrl": "https://dummyimage.com/894x584",
+    "location": "SPB",
+    "published": false,
+    "rating": 0,
+    "genreId": 10,
+    "createdAt": "2026-08-30T11:31:39.448Z",
+    "genre": {
+        "name": "Военный"
+    }
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_edit_movie_rounding_movie[0m
+curl -X PATCH 'https://api.dev-cinescope.coconutqa.ru/movies/72833' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NDk5LCJleHAiOjE3ODgwOTEyOTl9.4mU2p5je5c2nyM_vNzSe1gNbxKjJ-kQ9R4aWIzD2Cc8' \
+-H 'Content-Length: 17' \
+-d '{"price": 125.51}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "id": 72833,
+    "name": "Similar investment would movement.",
+    "description": "Common necessary research. Learn bit guy face. Tv art maybe other news particularly.",
+    "genreId": 10,
+    "imageUrl": "https://dummyimage.com/894x584",
+    "price": 125,
+    "rating": 0,
+    "location": "SPB",
+    "published": false,
+    "createdAt": "2026-08-30T11:31:39.448Z",
+    "genre": {
+        "name": "Военный"
+    }
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================

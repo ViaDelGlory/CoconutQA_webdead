@@ -1,0 +1,116 @@
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_get_admin_user (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTAyLCJleHAiOjE3ODgwOTEzMDJ9.IaTmob-XWFjhVwYb5SW1E5lIKXH8CDF76RhIczUDB_o",
+    "refreshToken": "1104fe6c-d33e-4634-8745-5fa756c0ab6f",
+    "expiresIn": 1788091302553
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_get_admin_user (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/user' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTAyLCJleHAiOjE3ODgwOTEzMDJ9.IaTmob-XWFjhVwYb5SW1E5lIKXH8CDF76RhIczUDB_o' \
+-H 'Cookie: refresh_token=1104fe6c-d33e-4634-8745-5fa756c0ab6f' \
+-H 'Content-Length: 171' \
+-d '{"email": "kek5nxbtye3@gmail.com", "fullName": "Miguel Baker", "password": "UJ8-MMlm", "passwordRepeat": "UJ8-MMlm", "roles": ["ADMIN"], "verified": true, "banned": false}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m201[0m
+	DATA:
+{
+    "id": "99e859d5-6a0e-48ac-89d7-e7182af5e732",
+    "email": "kek5nxbtye3@gmail.com",
+    "fullName": "Miguel Baker",
+    "verified": true,
+    "banned": false,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-08-30T11:31:42.837Z"
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_get_admin_user (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 58' \
+-d '{"email": "kek5nxbtye3@gmail.com", "password": "UJ8-MMlm"}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "99e859d5-6a0e-48ac-89d7-e7182af5e732",
+        "email": "kek5nxbtye3@gmail.com",
+        "fullName": "Miguel Baker",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZTg1OWQ1LTZhMGUtNDhhYy04OWQ3LWU3MTgyYWY1ZTczMiIsImVtYWlsIjoia2VrNW54YnR5ZTNAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTAzLCJleHAiOjE3ODgwOTEzMDN9.V1vDoj9MQK8PW31Kf0LGJ9413nNrnf2q9DdzDDzAUlU",
+    "refreshToken": "140b32a8-bb17-4df2-8e27-5ff62d48a9a9",
+    "expiresIn": 1788091303637
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_get_admin_user[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZTg1OWQ1LTZhMGUtNDhhYy04OWQ3LWU3MTgyYWY1ZTczMiIsImVtYWlsIjoia2VrNW54YnR5ZTNAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTAzLCJleHAiOjE3ODgwOTEzMDN9.V1vDoj9MQK8PW31Kf0LGJ9413nNrnf2q9DdzDDzAUlU' \
+-H 'Content-Length: 247' \
+-d '{"name": "Almost difficult.", "imageUrl": "https://picsum.photos/651/974", "price": 692, "description": "Effort wife case away test buy beat. Structure recent evening impact wonder close show.", "location": "MSK", "published": false, "genreId": 7}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:77 	STATUS_CODE: [31m403[0m
+	DATA: [31m{
+    "message": "Forbidden resource",
+    "error": "Forbidden",
+    "statusCode": 403
+}[0m
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================

@@ -1,0 +1,20 @@
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_get_movie_unvalid_id[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies/-1' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NDk1LCJleHAiOjE3ODgwOTEyOTV9.LOETelHU9uuCNugtV7R0zUgRcQaDyRbvW9Oo-O1ZYm4' \
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:77 	STATUS_CODE: [31m404[0m
+	DATA: [31m{
+    "message": "Фильм не найден",
+    "error": "Not Found",
+    "statusCode": 404
+}[0m
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================

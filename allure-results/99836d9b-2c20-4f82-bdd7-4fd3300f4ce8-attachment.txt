@@ -1,0 +1,149 @@
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_delete_movie_by_id_diff_user[CommonUser] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTEyLCJleHAiOjE3ODgwOTEzMTJ9.4BgomfESYLfvWh4IiEbwclP8nB9qLMnJ_z52UG9Y3MA",
+    "refreshToken": "8e16bd39-83f1-40d1-8b98-dc2ab60c394c",
+    "expiresIn": 1788091312134
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_delete_movie_by_id_diff_user[CommonUser] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/user' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTEyLCJleHAiOjE3ODgwOTEzMTJ9.4BgomfESYLfvWh4IiEbwclP8nB9qLMnJ_z52UG9Y3MA' \
+-H 'Cookie: refresh_token=8e16bd39-83f1-40d1-8b98-dc2ab60c394c' \
+-H 'Content-Length: 193' \
+-d '{"email": "kekciz95i8v@gmail.com", "fullName": "William Brown", "password": "}(kKXcv[*e%Js<K0qXg", "passwordRepeat": "}(kKXcv[*e%Js<K0qXg", "roles": ["USER"], "verified": true, "banned": false}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m201[0m
+	DATA:
+{
+    "id": "031da984-7bcf-4b2b-a0ca-cd1acbb95d8e",
+    "email": "kekciz95i8v@gmail.com",
+    "fullName": "William Brown",
+    "verified": true,
+    "banned": false,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-08-30T11:31:52.429Z"
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_delete_movie_by_id_diff_user[CommonUser] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 69' \
+-d '{"email": "kekciz95i8v@gmail.com", "password": "}(kKXcv[*e%Js<K0qXg"}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "031da984-7bcf-4b2b-a0ca-cd1acbb95d8e",
+        "email": "kekciz95i8v@gmail.com",
+        "fullName": "William Brown",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzMWRhOTg0LTdiY2YtNGIyYi1hMGNhLWNkMWFjYmI5NWQ4ZSIsImVtYWlsIjoia2VrY2l6OTVpOHZAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTEzLCJleHAiOjE3ODgwOTEzMTN9.aNvEX1vorgoEDRvdcjcvtS5EXVKhnXAOAqpOMZFl-NI",
+    "refreshToken": "82d1c641-0778-4cdc-a41f-5133db530d15",
+    "expiresIn": 1788091313140
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_delete_movie_by_id_diff_user[CommonUser][0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTEyLCJleHAiOjE3ODgwOTEzMTJ9.4BgomfESYLfvWh4IiEbwclP8nB9qLMnJ_z52UG9Y3MA' \
+-H 'Content-Length: 239' \
+-d '{"name": "Director force blue.", "imageUrl": "https://placekittens.com/213/411", "price": 453, "description": "In beautiful community seem. Ever benefit people value happy happen feel.", "location": "SPB", "published": false, "genreId": 6}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m201[0m
+	DATA:
+{
+    "id": 72834,
+    "name": "Director force blue.",
+    "price": 453,
+    "description": "In beautiful community seem. Ever benefit people value happy happen feel.",
+    "imageUrl": "https://placekittens.com/213/411",
+    "location": "SPB",
+    "published": false,
+    "rating": 0,
+    "genreId": 6,
+    "createdAt": "2026-08-30T11:31:53.652Z",
+    "genre": {
+        "name": "Стримы_Мэда"
+    }
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_delete_movie_by_id_diff_user[CommonUser][0m
+curl -X DELETE 'https://api.dev-cinescope.coconutqa.ru/movies/72834' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzMWRhOTg0LTdiY2YtNGIyYi1hMGNhLWNkMWFjYmI5NWQ4ZSIsImVtYWlsIjoia2VrY2l6OTVpOHZAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTEzLCJleHAiOjE3ODgwOTEzMTN9.aNvEX1vorgoEDRvdcjcvtS5EXVKhnXAOAqpOMZFl-NI' \
+-H 'Content-Length: 0' \
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:77 	STATUS_CODE: [31m403[0m
+	DATA: [31m{
+    "message": "Forbidden resource",
+    "error": "Forbidden",
+    "statusCode": 403
+}[0m
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================

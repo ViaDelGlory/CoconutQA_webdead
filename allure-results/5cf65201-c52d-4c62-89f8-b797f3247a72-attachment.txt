@@ -1,0 +1,78 @@
+======================================== REQUEST ========================================
+[32mpytest tests/api/test_auth.py::TestAuth::test_logout[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/register' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Cookie: refresh_token=5fd57cf6-5acf-4365-a9db-977641039b31' \
+-H 'Content-Length: 152' \
+-d '{"email": "kekjirjdywb@gmail.com", "fullName": "Kristin Coleman", "password": "3f&Lz-hi1lUK\"6", "passwordRepeat": "3f&Lz-hi1lUK\"6", "roles": ["USER"]}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	DATA:
+{
+    "id": "aaac1e41-86f5-43d3-afb1-0037a84d41f7",
+    "email": "kekjirjdywb@gmail.com",
+    "fullName": "Kristin Coleman",
+    "verified": true,
+    "banned": false,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-08-30T11:19:37.834Z"
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/api/test_auth.py::TestAuth::test_logout[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Cookie: refresh_token=5fd57cf6-5acf-4365-a9db-977641039b31' \
+-H 'Content-Length: 65' \
+-d '{"email": "kekjirjdywb@gmail.com", "password": "3f&Lz-hi1lUK\"6"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "aaac1e41-86f5-43d3-afb1-0037a84d41f7",
+        "email": "kekjirjdywb@gmail.com",
+        "fullName": "Kristin Coleman",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFhYWMxZTQxLTg2ZjUtNDNkMy1hZmIxLTAwMzdhODRkNDFmNyIsImVtYWlsIjoia2VramlyamR5d2JAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg4Nzc4LCJleHAiOjE3ODgwOTA1Nzh9.fZCKcN_rXthxmLDpivvqH13E5ynUgHUS4YbIibnG7xE",
+    "refreshToken": "01c029ac-e3d0-482f-8e11-44ebdb0c8d81",
+    "expiresIn": 1788090578139
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/api/test_auth.py::TestAuth::test_logout[0m
+curl -X GET 'https://auth.dev-cinescope.coconutqa.ru/logout' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Cookie: refresh_token=01c029ac-e3d0-482f-8e11-44ebdb0c8d81' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	DATA:
+OK
+================================================================================

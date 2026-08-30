@@ -1,0 +1,28 @@
+======================================== REQUEST ========================================
+[32mpytest tests/api/test_auth.py::TestAuth::test_register_user[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/register' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Cookie: refresh_token=5fd57cf6-5acf-4365-a9db-977641039b31' \
+-H 'Content-Length: 150' \
+-d '{"email": "kekqg05cxm8@gmail.com", "fullName": "John Harris", "password": "'@(v>X-Gf3i}0sM[", "passwordRepeat": "'@(v>X-Gf3i}0sM[", "roles": ["USER"]}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	DATA:
+{
+    "id": "2814e0e6-aab0-4308-8653-164f5fc6fff4",
+    "email": "kekqg05cxm8@gmail.com",
+    "fullName": "John Harris",
+    "verified": true,
+    "banned": false,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-08-30T11:19:37.622Z"
+}
+================================================================================

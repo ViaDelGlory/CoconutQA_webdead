@@ -1,0 +1,58 @@
+======================================== REQUEST ========================================
+[32mpytest tests/api/test_auth.py::TestAuth::test_login[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/register' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 143' \
+-d '{"email": "keki1ph8jn8@gmail.com", "fullName": "Andrew Alvarez", "password": "xd+7nd?R.C1", "passwordRepeat": "xd+7nd?R.C1", "roles": ["USER"]}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	DATA:
+{
+    "id": "e8b6627a-dc03-43db-a751-c7440cb5334d",
+    "email": "keki1ph8jn8@gmail.com",
+    "fullName": "Andrew Alvarez",
+    "verified": true,
+    "banned": false,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-08-30T11:19:36.915Z"
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/api/test_auth.py::TestAuth::test_login[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 61' \
+-d '{"email": "keki1ph8jn8@gmail.com", "password": "xd+7nd?R.C1"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "e8b6627a-dc03-43db-a751-c7440cb5334d",
+        "email": "keki1ph8jn8@gmail.com",
+        "fullName": "Andrew Alvarez",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4YjY2MjdhLWRjMDMtNDNkYi1hNzUxLWM3NDQwY2I1MzM0ZCIsImVtYWlsIjoia2VraTFwaDhqbjhAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg4Nzc3LCJleHAiOjE3ODgwOTA1Nzd9.t0EyPHP5QRD6vdU31MGBTQXf5_nE941E3UgvfwC9qao",
+    "refreshToken": "5fd57cf6-5acf-4365-a9db-977641039b31",
+    "expiresIn": 1788090577335
+}
+================================================================================

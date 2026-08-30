@@ -1,0 +1,268 @@
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_movie_with_parametrize[price_filter] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTA1LCJleHAiOjE3ODgwOTEzMDV9.UR3zgdQMB7mOlyGbrlaV3T5B8MvMjfIFzBnWG6cn3Vc",
+    "refreshToken": "e4a8c033-7130-4d9a-9945-fff96c0406f7",
+    "expiresIn": 1788091305036
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_movie_with_parametrize[price_filter] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/user' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTA1LCJleHAiOjE3ODgwOTEzMDV9.UR3zgdQMB7mOlyGbrlaV3T5B8MvMjfIFzBnWG6cn3Vc' \
+-H 'Cookie: refresh_token=e4a8c033-7130-4d9a-9945-fff96c0406f7' \
+-H 'Content-Length: 194' \
+-d '{"email": "kekxrsmhinm@gmail.com", "fullName": "Theresa Conway", "password": "4h|_PTp8wa2K//,\\7d", "passwordRepeat": "4h|_PTp8wa2K//,\\7d", "roles": ["USER"], "verified": true, "banned": false}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m201[0m
+	DATA:
+{
+    "id": "e46201b1-5682-41ae-b6df-0a3af218eb82",
+    "email": "kekxrsmhinm@gmail.com",
+    "fullName": "Theresa Conway",
+    "verified": true,
+    "banned": false,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-08-30T11:31:45.321Z"
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_movie_with_parametrize[price_filter] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 69' \
+-d '{"email": "kekxrsmhinm@gmail.com", "password": "4h|_PTp8wa2K//,\\7d"}' 
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "e46201b1-5682-41ae-b6df-0a3af218eb82",
+        "email": "kekxrsmhinm@gmail.com",
+        "fullName": "Theresa Conway",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0NjIwMWIxLTU2ODItNDFhZS1iNmRmLTBhM2FmMjE4ZWI4MiIsImVtYWlsIjoia2VreHJzbWhpbm1AZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTA2LCJleHAiOjE3ODgwOTEzMDZ9.9CVDlbkDFiiZLPqZ8WEVFhmHmAXcx_dU350hG3CyS1A",
+    "refreshToken": "b4976c26-3355-488c-b837-56fd6e35d875",
+    "expiresIn": 1788091306055
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:58 
+======================================== REQUEST ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:59 [32mpytest tests/movie/test_movies.py::TestMovies::test_movie_with_parametrize[price_filter][0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?minPrice=1&maxPrice=1000' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0NjIwMWIxLTU2ODItNDFhZS1iNmRmLTBhM2FmMjE4ZWI4MiIsImVtYWlsIjoia2VreHJzbWhpbm1AZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg5NTA2LCJleHAiOjE3ODgwOTEzMDZ9.9CVDlbkDFiiZLPqZ8WEVFhmHmAXcx_dU350hG3CyS1A' \
+
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:75 
+======================================== RESPONSE ========================================
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:82 	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "movies": [
+        {
+            "id": 22,
+            "name": "Can.",
+            "description": "Sound pass draw painting mother. Community other usually two.\nThird office once those every from. Year impact pass necessary yeah marriage she. Organization born during course reason main season.",
+            "genreId": 8,
+            "imageUrl": "https://dummyimage.com/453x488",
+            "price": 517,
+            "rating": 4,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2024-07-12T09:37:03.390Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        },
+        {
+            "id": 836,
+            "name": "Виртуальная и многозадачная возможность",
+            "description": "Означать тюрьма тута магазин адвокат. Задержать песенка порядок чувство легко бок.",
+            "genreId": 7,
+            "imageUrl": "https://www.oao.biz/",
+            "price": 468,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-22T15:40:55.013Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 885,
+            "name": "Information course.",
+            "description": "How product able. Today perhaps product however onto PM anything.\nGun result per. Who affect feel once per away. Easy second something who.",
+            "genreId": 8,
+            "imageUrl": "https://placekitten.com/905/911",
+            "price": 713,
+            "rating": 1,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-23T11:38:15.515Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        },
+        {
+            "id": 897,
+            "name": "Автономный и логистический интерфейс",
+            "description": "Тесно дружно мелочь солнце функция задержать. Пропаганда подземный мальчишка решение провинция боец.\nПодземный снимать основание успокоиться. Какой металл миллиард советовать.",
+            "genreId": 10,
+            "imageUrl": "https://oktoblu.com/",
+            "price": 746,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-23T12:31:07.292Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 995,
+            "name": "Фильм jkzqaqqvmm",
+            "description": "Описание mqdsqccdhbiatwmafisziyhgwxkozl",
+            "genreId": 7,
+            "imageUrl": "https://www.walker.org/tagmain.htm",
+            "price": 445,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-23T20:31:06.323Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 997,
+            "name": "Фильм xinaamufkf",
+            "description": "Описание vycdjiyusamgozhqpgdlczngtwpoby",
+            "genreId": 7,
+            "imageUrl": "https://munoz-williams.info/postsabout.jsp",
+            "price": 685,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-23T20:33:39.566Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1026,
+            "name": "Say.",
+            "description": "Return join himself quickly rate support ask society. Free property ok. Course no purpose ago address myself. Project institution strategy.\nTerm condition child no. Time section different drug full.",
+            "genreId": 8,
+            "imageUrl": "https://placekitten.com/450/543",
+            "price": 276,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-24T04:28:23.404Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        },
+        {
+            "id": 1051,
+            "name": "Act.",
+            "description": "Wonder act as care.\nAble camera miss form interview American. Local student night result find. Outside when table record relationship us.",
+            "genreId": 8,
+            "imageUrl": "https://dummyimage.com/288x3",
+            "price": 727,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-05-26T10:56:29.972Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        },
+        {
+            "id": 1095,
+            "name": "Theory apply.",
+            "description": "Charge news mention eat computer show. Government imagine lose interest attack loss. Product painting accept best sister continue.\nBlood operation look seek growth. President fill you north do.",
+            "genreId": 7,
+            "imageUrl": "https://placekitten.com/808/445",
+            "price": 170,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-26T11:22:29.489Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1135,
+            "name": "Best hand.",
+            "description": "Plan general space help only mean marriage. Read chair would success week fear care like.\nAny must phone attention quality. Positive water pay clearly.\nMarriage marriage trip could.",
+            "genreId": 9,
+            "imageUrl": "https://dummyimage.com/114x458",
+            "price": 770,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-26T14:54:00.560Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        }
+    ],
+    "count": 2156,
+    "page": 1,
+    "pageSize": 10,
+    "pageCount": 216
+}
+[32mINFO    [0m custom_requester.custom_requester:custom_requester.py:86 ================================================================================

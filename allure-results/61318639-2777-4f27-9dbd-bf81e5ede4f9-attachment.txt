@@ -1,0 +1,89 @@
+======================================== REQUEST ========================================
+[32mpytest tests/api/test_auth.py::TestAuth::test_login_and_update[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/register' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 143' \
+-d '{"email": "kekiwpljk4x@gmail.com", "fullName": "Nathan Schultz", "password": "bbR2(Q:3K*T", "passwordRepeat": "bbR2(Q:3K*T", "roles": ["USER"]}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	DATA:
+{
+    "id": "93ef45f1-8bab-423d-90da-80d4d47b4228",
+    "email": "kekiwpljk4x@gmail.com",
+    "fullName": "Nathan Schultz",
+    "verified": true,
+    "banned": false,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-08-30T11:19:38.520Z"
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/api/test_auth.py::TestAuth::test_login_and_update[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 61' \
+-d '{"email": "kekiwpljk4x@gmail.com", "password": "bbR2(Q:3K*T"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "user": {
+        "id": "93ef45f1-8bab-423d-90da-80d4d47b4228",
+        "email": "kekiwpljk4x@gmail.com",
+        "fullName": "Nathan Schultz",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzZWY0NWYxLThiYWItNDIzZC05MGRhLTgwZDRkNDdiNDIyOCIsImVtYWlsIjoia2VraXdwbGprNHhAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg4Nzc4LCJleHAiOjE3ODgwOTA1Nzh9.s7wYaHWNgbInsbtRsvSEcD0AOFeKaKwsqVqmUfNVCFg",
+    "refreshToken": "6e4be633-8aa6-436e-803c-9ce096e15136",
+    "expiresIn": 1788090578837
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/api/test_auth.py::TestAuth::test_login_and_update[0m
+curl -X GET 'https://auth.dev-cinescope.coconutqa.ru/user/me' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzZWY0NWYxLThiYWItNDIzZC05MGRhLTgwZDRkNDdiNDIyOCIsImVtYWlsIjoia2VraXdwbGprNHhAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzg4MDg4Nzc4LCJleHAiOjE3ODgwOTA1Nzh9.s7wYaHWNgbInsbtRsvSEcD0AOFeKaKwsqVqmUfNVCFg' \
+-H 'Cookie: refresh_token=6e4be633-8aa6-436e-803c-9ce096e15136' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	DATA:
+{
+    "id": "93ef45f1-8bab-423d-90da-80d4d47b4228",
+    "email": "kekiwpljk4x@gmail.com",
+    "fullName": "Nathan Schultz",
+    "password": "$2b$10$FeJEozv0oabYiZILl9h4tODLk6hQl98VUR5SXHmvim8guSFL9oure",
+    "createdAt": "2026-08-30T11:19:38.520Z",
+    "updatedAt": "2026-08-30T11:19:38.520Z",
+    "verified": true,
+    "banned": false,
+    "roles": [
+        "USER"
+    ]
+}
+================================================================================
