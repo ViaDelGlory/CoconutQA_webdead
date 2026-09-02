@@ -21,6 +21,8 @@ from Module6.Tools import Tools
 from playwright.sync_api import Page
 from pages.register_page import CinescopeRegisterPage
 from pages.login_page import CinescopeLoginPage
+from pages.movies_page import CinescopeMoviesPage
+from pages.movie_page import CinescopeMoviePage
 import time
 
 @pytest.fixture(scope="session")
@@ -320,3 +322,11 @@ def register_data():
         "email": DataGenerator.generate_random_email(),
         "password": DataGenerator.generate_password()
     }
+
+@pytest.fixture
+def movies_page(page: Page) -> CinescopeMoviesPage:
+    return CinescopeMoviesPage(page)
+
+@pytest.fixture
+def movie_page(page: Page) -> CinescopeMoviePage:
+    return CinescopeMoviePage(page)

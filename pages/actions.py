@@ -18,3 +18,7 @@ class PageAction:
     @allure.step("Клик по элементу: {locator}")
     def click(self, locator: str):
         self.page.click(locator)
+
+    @allure.step("Клик по первому элементу: {locator}")
+    def click_first(self, locator: str):
+        self.page.locator(locator).first.click()
