@@ -9,9 +9,5 @@ class ApiManager:
         self.user_api = UserApi(session)
         self.movies_api = MoviesApi(session)
 
-    def update_session_headers(self, headers):
-        """Обновляет заголовки сессии"""
-        self.session.headers.update(headers)
-
     def close_session(self):
         self.session.close()

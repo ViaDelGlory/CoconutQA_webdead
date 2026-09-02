@@ -8,6 +8,7 @@ from data.auth.register_data import get_register_payload
 from clients.api_manager import ApiManager
 from data.movies.movies_data import get_movie_data
 from entities.user import User
+from pages.login_page import CinescopeLoginPage
 from resoures.user_creds import SuperAdminCreds
 from constants.roles import Roles
 from utils.data_generator import DataGenerator
@@ -15,6 +16,11 @@ from models.base_models import TestUser
 from sqlalchemy.orm import Session
 from db_requester.db_client import get_db_session
 from db_requester.db_helpers import DBHelper
+from playwright.sync_api import sync_playwright
+from Module6.Tools import Tools
+from playwright.sync_api import Page
+from pages.register_page import CinescopeRegisterPage
+from pages.login_page import CinescopeLoginPage
 import time
 
 @pytest.fixture(scope="session")
@@ -265,3 +271,52 @@ def movie_data_db():
 def delay_between_retries():
     time.sleep(2)  # Задержка в 2 секунды\ это не обязательно но
     yield          # нужно понимать что такая возможность имеется
+
+"""Playwright Fixtures"""
+
+DEFAULT_UI_TIMEOUT = 30000  # Пример значения таймаута
+
+@pytest.fixture(scope="session")  # Браузер запускается один раз для всей сессии
+def browser(playwright):
+    browser = playwright.chromium.launch(headless=False)  # headless=True для CI/CD, headless=False для локальной разработки
+    yield browser  # yield возвращает значение фикстуры, выполнение теста продолжится после yield
+    browser.close()  # Браузер закрывается после завершения всех тестов
+
+
+@pytest.fixture(scope="function")
+def context(browser):
+    context = browser.new_context()
+    context.tracing.start(screenshots=True, snapshots=True, sources=True)
+    context.set_default_timeout(DEFAULT_UI_TIMEOUT)
+    yield context
+    log_name = f"trace_{Tools.get_timestamp()}.zip"
+    trace_path = Tools.files_dir('playwright_trace', log_name)
+    context.tracing.stop(path=trace_path)
+    context.close()
+
+
+@pytest.fixture(scope="function")  # Страница создается для каждого теста
+def page(context):
+    page = context.new_page()
+    yield page  # yield возвращает значение фикстуры, выполнение теста продолжится после yield
+    page.close()  # Страница закрывается после завершения теста
+
+@pytest.fixture
+def register_page(page: Page) -> CinescopeRegisterPage:
+    register_page = CinescopeRegisterPage(page)
+    register_page.open()
+    return register_page
+
+@pytest.fixture
+def login_page(page: Page) -> CinescopeLoginPage:
+    login_page = CinescopeLoginPage(page)
+    login_page.open()
+    return login_page
+
+@pytest.fixture
+def register_data():
+    return {
+        "full_name": DataGenerator.generate_random_name(),
+        "email": DataGenerator.generate_random_email(),
+        "password": DataGenerator.generate_password()
+    }
